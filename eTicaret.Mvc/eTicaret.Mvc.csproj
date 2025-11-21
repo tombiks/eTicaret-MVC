@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\eTicaret.Application\eTicaret.Application.csproj" />
+    <ProjectReference Include="..\eTicaret.Infrastructure\eTicaret.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -18,7 +18,7 @@ namespace eTicaret.Infrastructure
         {
             services.AddDbContext<eTicaretDbContext>(options =>
             {                
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(configuration.GetConnectionString("Default"));
             });
                         
             services.AddScoped<IUnitOfWork, UnitOfWork>();
