@@ -21,8 +21,9 @@ namespace eTicaret.Domain.Entities
         public DateTime CreatedDate { get; set; }
         public bool IsActive { get; set; }
 
-
-
-
+        public string GetFullName()
+        {
+            return $"{FirstName} {LastName}";
+        }
     }
 }
