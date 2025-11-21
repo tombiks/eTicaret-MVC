@@ -77,6 +77,27 @@
 .auth-wrapper .form input.button:hover{
   background: #6a9933;
 }
+.auth-wrapper .form .role-selection {
+  margin: 1rem 0 0.5rem 0;
+}
+.auth-wrapper .form .role-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+  font-size: 13px;
+}
+.auth-wrapper .form .role-option input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  accent-color: #7fad39;
+}
+.auth-wrapper .form .role-option span {
+  user-select: none;
+  color: #333;
+}
 .auth-wrapper .signup{
   font-size: 13px;
   text-align: center;

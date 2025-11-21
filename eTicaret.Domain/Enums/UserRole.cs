@@ -8,9 +8,8 @@ namespace eTicaret.Domain.Enums
 {
     public enum UserRole
     {
-        Admin = 1,
-        Customer = 2,
-        Seller = 3,
-
+        Customer = 1,
+        Seller = 2,
+        Admin = 3,
     }
 }

@@ -12,6 +12,6 @@ namespace eTicaret.Application.DTOs.Users
         public string Email { get; set; }
         public string FullName { get; set; } 
         public string Role { get; set; }
-        public string HomeAddressDescription { get; set; }
+        public string AddressDescription { get; set; }
     }
 }
