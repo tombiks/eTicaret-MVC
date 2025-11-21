@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eTicaret.Application.DTOs.Users
 {
-    internal class UserRegistrationDto
+    public class UserRegistrationDto
     {
         public string Email { get; set; }
         public string Password { get; set; }
