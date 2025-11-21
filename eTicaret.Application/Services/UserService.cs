@@ -31,7 +31,7 @@ namespace eTicaret.Application.Services
 
             if (existingUser != null)
             {
-                throw new ArgumentException("\r\nThis email address is already in use.");
+                throw new ArgumentException("This email address is already in use.");
             }
 
             
@@ -71,7 +71,7 @@ namespace eTicaret.Application.Services
                     Id = newUser.Id,
                     Email = newUser.Email,
                     FullName = newUser.GetFullName(),
-                    Role = newUser.UserRole.ToString(),
+                    UserRole = newUser.UserRole.ToString(),
                     AddressDescription = "Address information is not available."
                 };
             }
