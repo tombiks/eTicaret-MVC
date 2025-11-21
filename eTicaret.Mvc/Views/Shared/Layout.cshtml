@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <partial name="Partials/MainMeta"/>
+    <title>@ViewData["Title"] - E-Ticaret</title>
+    <partial name="Partials/MainCss"/>
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <partial name="Partials/MainHeader"/> 
+    @RenderBody()    
+    <partial name="Partials/MainFooter"/>
+    <partial name="Partials/MainJsPlugins"/>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

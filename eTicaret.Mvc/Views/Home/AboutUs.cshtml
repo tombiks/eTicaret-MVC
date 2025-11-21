@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+
+    string name = "About Us";
+}
+
+<partial name="Partials/OtherHeroSection" model="false" />
+<partial name="Partials/OtherBreadCrumbSection" model=@name/>
+<partial name="Partials/OtherContactSection" />
+
+<!-- Map Begin -->
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6188.049924604277!2d34.157418737487404!3d39.15141387135282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d572b5ece3daad%3A0xe378b4e963d4a4fb!2sKentpark!5e0!3m2!1str!2str!4v1763653202566!5m2!1str!2str" 
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+</div>
+<!-- Map End -->
+
+<!-- Contact Form Begin -->
+<div class="contact-form spad">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="contact__form__title">
+                    <h2>Leave Message</h2>
+                </div>
+            </div>
+        </div>
+        <form action="#">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-5">
+                    <input type="text" placeholder="Your name">
+                </div>
+                <div class="col-lg-5 col-md-5">
+                    <input type="text" placeholder="Your Email">
+                </div>
+                <div class="col-lg-10 text-center">
+                    <textarea placeholder="Your message"></textarea>
+                    <button type="submit" class="site-btn">SEND MESSAGE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Contact Form End -->
