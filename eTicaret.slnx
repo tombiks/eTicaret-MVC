@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="eTicaret.Domain/eTicaret.Domain.csproj" Id="9c7f2a0f-e23d-4fb6-a82d-0bc6394859cc" />
   <Project Path="eTicaret.Mvc/eTicaret.Mvc.csproj" />
 </Solution>
