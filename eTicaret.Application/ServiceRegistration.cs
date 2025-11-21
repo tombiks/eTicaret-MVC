@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using eTicaret.Application.Interfaces;
 using eTicaret.Application.Services;
+using System.Reflection;
 
 namespace eTicaret.Application
 {
@@ -13,6 +14,8 @@ namespace eTicaret.Application
     {
         public static void AddApplicationServices(this IServiceCollection services) 
         {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
             services.AddScoped<IUserService, UserService>();
         }
     

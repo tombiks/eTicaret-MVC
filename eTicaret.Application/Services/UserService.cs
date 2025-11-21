@@ -3,6 +3,7 @@ using eTicaret.Application.Interfaces;
 using eTicaret.Domain.Entities;
 using eTicaret.Domain.Enums;
 using eTicaret.Domain.Interfaces;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,13 @@ namespace eTicaret.Application.Services
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public UserService(IUnitOfWork unitOfWork) 
+        private readonly IMapper _mapper;
+
+        public UserService(IUnitOfWork unitOfWork, IMapper mapper) 
         {
             _unitOfWork = unitOfWork;
+
+            _mapper = mapper;
         }
 
         public async Task<UserDto> RegisterUserAsync(UserRegistrationDto registrationDto) 
@@ -48,19 +53,15 @@ namespace eTicaret.Application.Services
             
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(registrationDto.Password);
 
-            
-            var newUser = new User
-            {
-                Email = registrationDto.Email,
-                PasswordHash = passwordHash,
-                FirstName = "",
-                LastName = "",
-                CreatedDate = DateTime.UtcNow,
-                IsActive = true, 
-                UserRole = assignedRole,
-            };
 
-            
+            var newUser = _mapper.Map<User>(registrationDto);
+
+            newUser.PasswordHash = passwordHash;            
+            newUser.UserRole = assignedRole;
+            newUser.CreatedDate = DateTime.UtcNow;
+            newUser.IsActive = true;
+
+
             await _unitOfWork.Users.AddAsync(newUser);
             var changes = await _unitOfWork.CompleteAsync();
 
