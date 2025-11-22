@@ -12,7 +12,7 @@ using eTicaret.Infrastructure.Persistence.Context;
 namespace eTicaret.Infrastructure.Migrations
 {
     [DbContext(typeof(eTicaretDbContext))]
-    [Migration("20251121185659_InitialCreate")]
+    [Migration("20251122001148_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -41,14 +41,12 @@ namespace eTicaret.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
@@ -106,8 +104,7 @@ namespace eTicaret.Infrastructure.Migrations
                                 .HasForeignKey("UserId");
                         });
 
-                    b.Navigation("Address")
-                        .IsRequired();
+                    b.Navigation("Address");
                 });
 #pragma warning restore 612, 618
         }

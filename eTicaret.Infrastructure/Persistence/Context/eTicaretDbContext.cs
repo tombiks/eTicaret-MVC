@@ -23,16 +23,19 @@ namespace eTicaret.Infrastructure.Persistence.Context
 
             modelBuilder.Entity<User>(entity =>
             {
+                entity.Property(u => u.FirstName).IsRequired(false);
+                entity.Property(u => u.LastName).IsRequired(false);
                 entity.HasKey(u => u.Id);
                 entity.HasIndex(u => u.Email).IsUnique();
                 entity.OwnsOne(a => a.Address, address =>
                 {
                     address.Property(a => a.Title).HasColumnName("HomeAddress_Title").IsRequired();
                     address.Property(a => a.City).HasColumnName("HomeAddress_City").IsRequired();
-                    address.Property(a => a.FullAddress).HasColumnName("HomeAddress_FullAddress").IsRequired();                    
+                    address.Property(a => a.FullAddress).HasColumnName("HomeAddress_FullAddress").IsRequired();
                     address.Property(a => a.District).HasColumnName("HomeAddress_District").IsRequired();
                     address.Property(a => a.ZipCode).HasColumnName("HomeAddress_ZipCode").IsRequired();
                 });
+                entity.Navigation(e => e.Address).IsRequired(false);
             });
         }
     }
